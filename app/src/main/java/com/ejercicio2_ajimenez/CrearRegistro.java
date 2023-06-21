@@ -26,7 +26,7 @@ public class CrearRegistro extends AppCompatActivity
         apellidos = findViewById(R.id.apellidos);
         edad = findViewById(R.id.edad);
         correo = findViewById(R.id.correo);
-        btnagregar = (Button) findViewById(R.id.btnagregar);
+        btnagregar = findViewById(R.id.btnagregar);
 
         btnagregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +48,7 @@ public class CrearRegistro extends AppCompatActivity
         valores.put(Transacciones.correo, correo.getText().toString());
 
         Long result = db.insert(Transacciones.tablaPersonas, Transacciones.id, valores);
-        Toast.makeText(getApplicationContext(), "Registro ingresado : " + result.toString(),Toast.LENGTH_LONG ).show();
+        Toast.makeText(getApplicationContext(), "Registro ingresado : " + result,Toast.LENGTH_LONG ).show();
 
         db.close();
 
